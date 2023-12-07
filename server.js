@@ -1,21 +1,22 @@
-const express = require("express");
 const cors = require("cors");
-const bodyParser = require("body-parser");
-const connection = require("../backendmony/Helper/db");
+const express = require("express");
+const connection = require("./Helper/db");
+const routes = require("./Routes/index");
 require("dotenv").config();
-
-// const routes = require("../Backend/Routes/index");
+const bodyParser = require("body-parser");
+const path = require("path");
 
 const app = express();
 app.use(cors({ origin: "http://localhost:3000", methods: "*" }));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 app.use(express.json());
-// app.use("/api", routes);
-// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use("/api", routes);
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 const PORT = process.env.PORT;
 
-app.listen(PORT, (req, res) => {
+app.listen(4050, (req, res) => {
   console.log(`Port is running on ${PORT}`);
 });

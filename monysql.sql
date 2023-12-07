@@ -33,6 +33,12 @@ CREATE TABLE `member` (
   `acc_no` varchar(20) DEFAULT NULL,
   `branch` varchar(255) DEFAULT NULL,
   `ifsc_code` varchar(20) DEFAULT NULL,
+  `pancard_front_image` varchar(255) DEFAULT NULL,
+  `pancard_back_image` varchar(255) DEFAULT NULL,
+  `aadhaar_no` varchar(20) DEFAULT NULL,
+  `pincode` varchar(10) DEFAULT NULL,
+  `pancard_front_image_path` varchar(255) DEFAULT NULL,
+  `pancard_back_image_path` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`memb_id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -68,6 +74,13 @@ CREATE TABLE `seller` (
   `company_logo` varchar(255) DEFAULT NULL,
   `company_name` varchar(255) DEFAULT NULL,
   `gst_no` varchar(20) DEFAULT NULL,
+  `pancard_front_image` varchar(255) DEFAULT NULL,
+  `pancard_back_image` varchar(255) DEFAULT NULL,
+  `aadhaar_no` varchar(20) DEFAULT NULL,
+  `pincode` varchar(10) DEFAULT NULL,
+  `pancard_front_image_path` varchar(255) DEFAULT NULL,
+  `pancard_back_image_path` varchar(255) DEFAULT NULL,
+  `company_logo_path` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`seller_id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -91,4 +104,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-04 14:04:42
+-- Dump completed on 2023-12-07 14:32:15
