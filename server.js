@@ -17,6 +17,6 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 const PORT = process.env.PORT;
 
-app.listen(4050, (req, res) => {
+app.listen(4010, (req, res) => {
   console.log(`Port is running on ${PORT}`);
 });
